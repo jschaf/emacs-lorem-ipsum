@@ -120,8 +120,7 @@
 	(insert (concat
 		 (mapconcat 'identity
 			    (nth (if (interactive-p) 0 (random (length Lorem-ipsum-text)))
-				 Lorem-ipsum-text) " ")
-		 Lorem-ipsum-paragraph-separator))
+				 Lorem-ipsum-text) Lorem-ipsum-sentence-separator) Lorem-ipsum-paragraph-separator))
 	(Lorem-ipsum-insert-paragraphs (- num 1)))))
 
 (defun Lorem-ipsum-insert-sentences (&optional num)
