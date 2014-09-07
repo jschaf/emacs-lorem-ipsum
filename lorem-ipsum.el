@@ -4,8 +4,7 @@
 ;;                 and Marcus Tullius Cicero
 ;;
 ;; version :
-(defconst lorem-ipsum-version "0.1")
-;; last update: 16/09/2003
+(defconst lorem-ipsum-version "0.2")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Copyright (c) 2003 Jean-Philippe Theberge
