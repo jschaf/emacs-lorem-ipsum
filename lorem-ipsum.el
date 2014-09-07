@@ -4,8 +4,7 @@
 ;;                 and Marcus Tullius Cicero
 ;;
 ;; version :
-(defconst lorem-ipsum-version "0.1")
-;; last update: 16/09/2003
+(defconst lorem-ipsum-version "0.2")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Copyright (c) 2003 Jean-Philippe Theberge
@@ -119,9 +118,8 @@
       (progn
 	(insert (concat
 		 (mapconcat 'identity
-			    (nth (if (interactive-p) 0 (random (length Lorem-ipsum-text)))
-				 Lorem-ipsum-text) " ")
-		 Lorem-ipsum-paragraph-separator))
+			    (nth (random (length Lorem-ipsum-text))
+				 Lorem-ipsum-text) Lorem-ipsum-sentence-separator) Lorem-ipsum-paragraph-separator))
 	(Lorem-ipsum-insert-paragraphs (- num 1)))))
 
 (defun Lorem-ipsum-insert-sentences (&optional num)
@@ -130,8 +128,8 @@
   (if (> num 0)
       (progn
 	(let ((para
-	       (nth (if (interactive-p) 0 (random (length Lorem-ipsum-text))) Lorem-ipsum-text)))
-	  (insert (concat (nth (if (interactive-p) 0 (random (length para))) para) Lorem-ipsum-sentence-separator)))
+	       (nth (random (length Lorem-ipsum-text)) Lorem-ipsum-text)))
+	  (insert (concat (nth (random (length para)) para) Lorem-ipsum-sentence-separator)))
 	(Lorem-ipsum-insert-sentences (- num 1)))))
 
 (defun Lorem-ipsum-insert-list (&optional num)
@@ -139,10 +137,9 @@
   (if (not num)(setq num 1))
   (if (> num 0)
       (progn
-	(if (interactive-p) (insert Lorem-ipsum-list-beginning))
-	(let ((para (nth (if (interactive-p) 0 (random (length Lorem-ipsum-text))) Lorem-ipsum-text)))
+	(let ((para (nth (random (length Lorem-ipsum-text)) Lorem-ipsum-text)))
 	  (insert (concat Lorem-ipsum-list-bullet
-			  (nth (if (interactive-p) 0 (random (length para))) para)
+			  (nth (random (length para)) para)
 			  Lorem-ipsum-list-item-end)))
 	(Lorem-ipsum-insert-list (- num 1)))
     (insert Lorem-ipsum-list-end)))
