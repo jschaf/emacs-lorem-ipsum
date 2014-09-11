@@ -1,13 +1,13 @@
 ;;; lorem-ipsum.el --- Insert dummy pseudo Latin text.
 
 ;; Copyright (c) 2003 Jean-Philippe Theberge
-;;
+
 ;; Author: Jean-Philippe Theberge (jphil21@sourceforge.net)
 ;; Maintainer: Joe Schafer (joe@jschaf.com)
-;;
 ;; Special Thanks: The emacswiki users, the #emacs@freenode.net citizens
 ;;                 and Marcus Tullius Cicero
-;; keywords: tools, language, convenience
+;; Keywords: tools, language, convenience
+;; Version: 0.2
 
 ;; This file is not part of GNU Emacs.
 
@@ -35,8 +35,11 @@
 
 ;;; Commentary:
 
-;; Add this file to your `load-path'.  Use the default keybindings by
-;; adding the following to your .emacs file:
+;; This package provides convenience functions to insert dummy Latin
+;; text into a buffer.
+;;
+;; To install manually, add this file to your `load-path'.  Use the
+;; default keybindings by adding the following to your .emacs file:
 ;;
 ;; (lorem-ipsum-use-default-bindings)
 ;;
