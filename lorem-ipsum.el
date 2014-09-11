@@ -7,7 +7,7 @@
 ;;
 ;; Special Thanks: The emacswiki users, the #emacs@freenode.net citizens
 ;;                 and Marcus Tullius Cicero
-;; keywords: tools, language
+;; keywords: tools, language, convenience
 
 ;; This file is not part of GNU Emacs.
 
