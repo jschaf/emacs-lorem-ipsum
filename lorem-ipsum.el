@@ -38,40 +38,40 @@
 ;; Add this file to your `load-path'.  Use the default keybindings by
 ;; adding the following to your .emacs file:
 ;;
-;; (Lorem-ipsum-use-default-bindings)
+;; (lorem-ipsum-use-default-bindings)
 ;;
 ;; This will setup the folling keybindings:
 ;;
-;; C-c l p: Lorem-ipsum-insert-paragraphs
-;; C-c l s: Lorem-ipsum-insert-sentences
-;; C-c l l: Lorem-ipsum-insert-list
+;; C-c l p: lorem-ipsum-insert-paragraphs
+;; C-c l s: lorem-ipsum-insert-sentences
+;; C-c l l: lorem-ipsum-insert-list
 ;;
 ;; If you want a different keybinding, say you want the prefix C-c C-l, use a variation of the
 ;; following:
 ;;
-;; (global-set-key (kbd "C-c C-l s") 'Lorem-ipsum-insert-sentences)
-;; (global-set-key (kbd "C-c C-l p") 'Lorem-ipsum-insert-paragraphs)
-;; (global-set-key (kbd "C-c C-l l") 'Lorem-ipsum-insert-list)
+;; (global-set-key (kbd "C-c C-l s") 'lorem-ipsum-insert-sentences)
+;; (global-set-key (kbd "C-c C-l p") 'lorem-ipsum-insert-paragraphs)
+;; (global-set-key (kbd "C-c C-l l") 'lorem-ipsum-insert-list)
 
 
 ;;; Code:
 
 (defconst lorem-ipsum-version "0.2")
 
-(defgroup Lorem-ipsum nil
+(defgroup lorem-ipsum nil
   "Insert filler text."
   :group 'tools
   :group 'convenience)
 
 ;;;###autoload
-(defun Lorem-ipsum-use-default-bindings ()
+(defun lorem-ipsum-use-default-bindings ()
   "Use the default keybindings of C-c l [spl]."
   (interactive)
-  (global-set-key (kbd "C-c l s") 'Lorem-ipsum-insert-sentences)
-  (global-set-key (kbd "C-c l p") 'Lorem-ipsum-insert-paragraphs)
-  (global-set-key (kbd "C-c l l") 'Lorem-ipsum-insert-list))
+  (global-set-key (kbd "C-c l s") 'lorem-ipsum-insert-sentences)
+  (global-set-key (kbd "C-c l p") 'lorem-ipsum-insert-paragraphs)
+  (global-set-key (kbd "C-c l l") 'lorem-ipsum-insert-list))
 
-(defconst Lorem-ipsum-text
+(defconst lorem-ipsum-text
   '(("Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
      "Donec hendrerit tempor tellus."
      "Donec pretium posuere tellus."
@@ -132,31 +132,31 @@
      "Curabitur lacinia pulvinar nibh."
      "Nam a sapien.")))
 
-(defvar Lorem-ipsum-paragraph-separator "\n\n")
-(defvar Lorem-ipsum-sentence-separator "  ")
-(defvar Lorem-ipsum-list-beginning "")
-(defvar Lorem-ipsum-list-bullet "* ")
-(defvar Lorem-ipsum-list-item-end "\n")
-(defvar Lorem-ipsum-list-end "")
+(defvar lorem-ipsum-paragraph-separator "\n\n")
+(defvar lorem-ipsum-sentence-separator "  ")
+(defvar lorem-ipsum-list-beginning "")
+(defvar lorem-ipsum-list-bullet "* ")
+(defvar lorem-ipsum-list-item-end "\n")
+(defvar lorem-ipsum-list-end "")
 
-(make-variable-buffer-local 'Lorem-ipsum-paragraph-separator)
-(make-variable-buffer-local 'Lorem-ipsum-sentence-separator)
-(make-variable-buffer-local 'Lorem-ipsum-list-beginning)
-(make-variable-buffer-local 'Lorem-ipsum-list-bullet)
-(make-variable-buffer-local 'Lorem-ipsum-list-item-end)
-(make-variable-buffer-local 'Lorem-ipsum-list-end)
+(make-variable-buffer-local 'lorem-ipsum-paragraph-separator)
+(make-variable-buffer-local 'lorem-ipsum-sentence-separator)
+(make-variable-buffer-local 'lorem-ipsum-list-beginning)
+(make-variable-buffer-local 'lorem-ipsum-list-bullet)
+(make-variable-buffer-local 'lorem-ipsum-list-item-end)
+(make-variable-buffer-local 'lorem-ipsum-list-end)
 
 (add-hook 'sgml-mode-hook (lambda ()
-			    (setq Lorem-ipsum-paragraph-separator "<br><br>\n"
-				  Lorem-ipsum-sentence-separator "&nbsp;&nbsp;"
-				  Lorem-ipsum-list-beginning "<ul>\n"
-				  Lorem-ipsum-list-bullet "<li>"
-				  Lorem-ipsum-list-item-end "</li>\n"
-				  Lorem-ipsum-list-end "</ul>\n")))
+			    (setq lorem-ipsum-paragraph-separator "<br><br>\n"
+				  lorem-ipsum-sentence-separator "&nbsp;&nbsp;"
+				  lorem-ipsum-list-beginning "<ul>\n"
+				  lorem-ipsum-list-bullet "<li>"
+				  lorem-ipsum-list-item-end "</li>\n"
+				  lorem-ipsum-list-end "</ul>\n")))
 
 ;;;###autoload
-(defun Lorem-ipsum-insert-paragraphs (&optional num)
-  "Insert Lorem ipsum paragraphs into buffer.
+(defun lorem-ipsum-insert-paragraphs (&optional num)
+  "Insert lorem ipsum paragraphs into buffer.
 If NUM is non-nil, insert NUM paragraphs."
   (interactive "p")
   (if (not num)(setq num 1))
@@ -164,39 +164,47 @@ If NUM is non-nil, insert NUM paragraphs."
       (progn
 	(insert (concat
 		 (mapconcat 'identity
-			    (nth (random (length Lorem-ipsum-text))
-				 Lorem-ipsum-text) Lorem-ipsum-sentence-separator) Lorem-ipsum-paragraph-separator))
-	(Lorem-ipsum-insert-paragraphs (- num 1)))))
+			    (nth (random (length lorem-ipsum-text))
+				 lorem-ipsum-text) lorem-ipsum-sentence-separator) lorem-ipsum-paragraph-separator))
+	(lorem-ipsum-insert-paragraphs (- num 1)))))
 
 ;;;###autoload
-(defun Lorem-ipsum-insert-sentences (&optional num)
-  "Insert Lorem ipsum sentences into buffer.
+(defalias 'Lorem-ipsum-insert-paragraphs 'lorem-ipsum-insert-paragraphs)
+
+;;;###autoload
+(defun lorem-ipsum-insert-sentences (&optional num)
+  "Insert lorem ipsum sentences into buffer.
 If NUM is non-nil, insert NUM sentences."
   (interactive "p")
   (if (not num)(setq num 1))
   (if (> num 0)
       (progn
 	(let ((para
-	       (nth (random (length Lorem-ipsum-text)) Lorem-ipsum-text)))
-	  (insert (concat (nth (random (length para)) para) Lorem-ipsum-sentence-separator)))
-	(Lorem-ipsum-insert-sentences (- num 1)))))
+	       (nth (random (length lorem-ipsum-text)) lorem-ipsum-text)))
+	  (insert (concat (nth (random (length para)) para) lorem-ipsum-sentence-separator)))
+	(lorem-ipsum-insert-sentences (- num 1)))))
 
 ;;;###autoload
-(defun Lorem-ipsum-insert-list (&optional num)
-  "Insert Lorem ipsum list items into buffer.
+(defalias 'Lorem-ipsum-insert-sentences 'lorem-ipsum-insert-sentences)
+
+;;;###autoload
+(defun lorem-ipsum-insert-list (&optional num)
+  "Insert lorem ipsum list items into buffer.
 If NUM is non-nil, insert NUM list items."
   (interactive "p")
   (if (not num)(setq num 1))
   (if (> num 0)
       (progn
-	(let ((para (nth (random (length Lorem-ipsum-text)) Lorem-ipsum-text)))
-	  (insert (concat Lorem-ipsum-list-bullet
+	(let ((para (nth (random (length lorem-ipsum-text)) lorem-ipsum-text)))
+	  (insert (concat lorem-ipsum-list-bullet
 			  (nth (random (length para)) para)
-			  Lorem-ipsum-list-item-end)))
-	(Lorem-ipsum-insert-list (- num 1)))
-    (insert Lorem-ipsum-list-end)))
+			  lorem-ipsum-list-item-end)))
+	(lorem-ipsum-insert-list (- num 1)))
+    (insert lorem-ipsum-list-end)))
 
+;;;###autoload
+(defalias 'Lorem-ipsum-insert-list 'lorem-ipsum-insert-list)
 
-(provide 'Lorem-ipsum)
+(provide 'lorem-ipsum)
 
 ;;; lorem-ipsum.el ends here

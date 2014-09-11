@@ -17,20 +17,20 @@ functions you need are `autoload`ed.
 Use the default keybindings by adding the following to your .emacs
 file:
 
-    (Lorem-ipsum-use-default-bindings)
+    (lorem-ipsum-use-default-bindings)
 
 
 This will setup the folling keybindings:
 
 Key Binding | Function
 ------------|------------------------------
-`C-c l p`   | Lorem-ipsum-insert-paragraphs
-`C-c l s`   | Lorem-ipsum-insert-sentences
-`C-c l l`   | Lorem-ipsum-insert-list
+`C-c l p`   | lorem-ipsum-insert-paragraphs
+`C-c l s`   | lorem-ipsum-insert-sentences
+`C-c l l`   | lorem-ipsum-insert-list
 
 If you want different keybinding, say you want the prefix C-c C-l, use a variation of the
 following:
 
-    (global-set-key (kbd "C-c C-l s") 'Lorem-ipsum-insert-sentences)
-    (global-set-key (kbd "C-c C-l p") 'Lorem-ipsum-insert-paragraphs)
-    (global-set-key (kbd "C-c C-l l") 'Lorem-ipsum-insert-list)
+    (global-set-key (kbd "C-c C-l s") 'lorem-ipsum-insert-sentences)
+    (global-set-key (kbd "C-c C-l p") 'lorem-ipsum-insert-paragraphs)
+    (global-set-key (kbd "C-c C-l l") 'lorem-ipsum-insert-list)
