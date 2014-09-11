@@ -35,6 +35,23 @@
 
 ;;; Commentary:
 
+;; Add this file to your `load-path'.  Use the default keybindings by
+;; adding the following to your .emacs file:
+;;
+;; (Lorem-ipsum-use-default-bindings)
+;;
+;; This will setup the folling keybindings:
+;;
+;; C-c l p: Lorem-ipsum-insert-paragraphs
+;; C-c l s: Lorem-ipsum-insert-sentences
+;; C-c l l: Lorem-ipsum-insert-list
+;;
+;; If you want a different keybinding, say you want the prefix C-c C-l, use a variation of the
+;; following:
+;;
+;; (global-set-key (kbd "C-c C-l s") 'Lorem-ipsum-insert-sentences)
+;; (global-set-key (kbd "C-c C-l p") 'Lorem-ipsum-insert-paragraphs)
+;; (global-set-key (kbd "C-c C-l l") 'Lorem-ipsum-insert-list)
 
 
 ;;; Code:
@@ -53,7 +70,8 @@
   (interactive)
   (global-set-key (kbd "C-c l s") 'Lorem-ipsum-insert-sentences)
   (global-set-key (kbd "C-c l p") 'Lorem-ipsum-insert-paragraphs)
-  (global-set-key (kbd "C-c l l") 'Lorem-ipsum-insert-list))
+  (global-set-key (kbd "C-c l l") 'Lorem-ipsum-insert-list)
+  )
 
 (defconst Lorem-ipsum-text
   '(("Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
