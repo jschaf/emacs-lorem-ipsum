@@ -56,7 +56,6 @@
 
 ;;; Code:
 
-
 (defconst lorem-ipsum-version "0.2")
 
 (defgroup Lorem-ipsum nil
