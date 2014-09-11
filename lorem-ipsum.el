@@ -42,6 +42,18 @@
 
 (defconst lorem-ipsum-version "0.2")
 
+(defgroup Lorem-ipsum nil
+  "Insert filler text."
+  :group 'tools
+  :group 'convenience)
+
+;;;###autoload
+(defun Lorem-ipsum-use-default-bindings ()
+  "Use the default keybindings of C-c l [spl]."
+    (global-set-key (kbd "C-c l s") 'Lorem-ipsum-insert-sentences)
+    (global-set-key (kbd "C-c l p") 'Lorem-ipsum-insert-paragraphs)
+    (global-set-key (kbd "C-c l l") 'Lorem-ipsum-insert-list))
+
 (defconst Lorem-ipsum-text
   '(("Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
      "Donec hendrerit tempor tellus."
