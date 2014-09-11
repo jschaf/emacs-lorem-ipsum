@@ -4,10 +4,11 @@
 
 ;; Author: Jean-Philippe Theberge (jphil21@sourceforge.net)
 ;; Maintainer: Joe Schafer (joe@jschaf.com)
+;; Package-Version: 0.2
+;; Keywords: tools, language, convenience
+
 ;; Special Thanks: The emacswiki users, the #emacs@freenode.net citizens
 ;;                 and Marcus Tullius Cicero
-;; Keywords: tools, language, convenience
-;; Version: 0.2
 
 ;; This file is not part of GNU Emacs.
 
