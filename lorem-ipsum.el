@@ -125,6 +125,7 @@
 				  Lorem-ipsum-list-item-end "</li>\n"
 				  Lorem-ipsum-list-end "</ul>\n")))
 
+;;;###autoload
 (defun Lorem-ipsum-insert-paragraphs (&optional num)
   "Insert Lorem ipsum paragraphs into buffer.
 If NUM is non-nil, insert NUM paragraphs."
@@ -138,6 +139,7 @@ If NUM is non-nil, insert NUM paragraphs."
 				 Lorem-ipsum-text) Lorem-ipsum-sentence-separator) Lorem-ipsum-paragraph-separator))
 	(Lorem-ipsum-insert-paragraphs (- num 1)))))
 
+;;;###autoload
 (defun Lorem-ipsum-insert-sentences (&optional num)
   "Insert Lorem ipsum sentences into buffer.
 If NUM is non-nil, insert NUM sentences."
@@ -150,6 +152,7 @@ If NUM is non-nil, insert NUM sentences."
 	  (insert (concat (nth (random (length para)) para) Lorem-ipsum-sentence-separator)))
 	(Lorem-ipsum-insert-sentences (- num 1)))))
 
+;;;###autoload
 (defun Lorem-ipsum-insert-list (&optional num)
   "Insert Lorem ipsum list items into buffer.
 If NUM is non-nil, insert NUM list items."
