@@ -70,8 +70,7 @@
   (interactive)
   (global-set-key (kbd "C-c l s") 'Lorem-ipsum-insert-sentences)
   (global-set-key (kbd "C-c l p") 'Lorem-ipsum-insert-paragraphs)
-  (global-set-key (kbd "C-c l l") 'Lorem-ipsum-insert-list)
-  )
+  (global-set-key (kbd "C-c l l") 'Lorem-ipsum-insert-list))
 
 (defconst Lorem-ipsum-text
   '(("Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
