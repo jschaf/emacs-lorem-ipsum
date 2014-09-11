@@ -168,6 +168,6 @@ If NUM is non-nil, insert NUM list items."
     (insert Lorem-ipsum-list-end)))
 
 
-(provide 'lorem-ipsum)
+(provide 'Lorem-ipsum)
 
 ;;; lorem-ipsum.el ends here
