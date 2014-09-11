@@ -18,11 +18,12 @@ file:
 
 
 This will setup the folling keybindings:
-=======  =============================
-C-c l p  Lorem-ipsum-insert-paragraphs
-C-c l s  Lorem-ipsum-insert-sentences
-C-c l l  Lorem-ipsum-insert-list
-=======  =============================
+
+Key Binding | Function
+------------|------------------------------
+C-c l p     | Lorem-ipsum-insert-paragraphs
+C-c l s     | Lorem-ipsum-insert-sentences
+C-c l l     | Lorem-ipsum-insert-list
 
 If you want different keybinding, say you want the prefix C-c C-l, use a variation of the
 following:
