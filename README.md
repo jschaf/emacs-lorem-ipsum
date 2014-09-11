@@ -6,7 +6,10 @@ Add filler lorem ipsum text to Emacs
 
 Soon to be added to the normal Emacs package repositories.
 
-Add this file to your `load-path'.
+**Manual Installation**
+
+Add `lorem-ipsum.el` to your `load-path`.  That's it, all the
+functions you need are `autoload`ed.
 
 
 ## Setup
