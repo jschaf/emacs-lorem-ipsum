@@ -4,7 +4,15 @@ Add filler lorem ipsum text to Emacs
 
 ## Installation
 
-Soon to be added to the normal Emacs package repositories.
+**MELPA**
+
+This package is available via MELPA. You can install it by calling:
+
+    M-x package-install RET lorem-ipsum
+
+Finally, the package must be required:
+
+    (require 'lorem-ipsum)
 
 **Manual Installation**
 
