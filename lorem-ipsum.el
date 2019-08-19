@@ -197,13 +197,13 @@ If NUM is non-nil, insert NUM sentences."
 If NUM is non-nil, insert NUM list items."
   (interactive "p")
   (if (not num)(setq num 1))
-  (if (> num 0)
-      (progn
-	(let ((para (nth (random (length lorem-ipsum-text)) lorem-ipsum-text)))
-	  (insert (concat lorem-ipsum-list-bullet
-			  (nth (random (length para)) para)
-			  lorem-ipsum-list-item-end)))
-	(lorem-ipsum-insert-list (- num 1)))
+  (when (> num 0)
+    (insert lorem-ipsum-list-beginning)
+    (dotimes (i num)
+      (let ((para (nth (random (length lorem-ipsum-text)) lorem-ipsum-text)))
+        (insert (concat lorem-ipsum-list-bullet
+                        (nth (random (length para)) para)
+                        lorem-ipsum-list-item-end))))
     (insert lorem-ipsum-list-end)))
 
 ;;;###autoload
