@@ -1,11 +1,12 @@
-;;; lorem-ipsum.el --- Insert dummy pseudo Latin text.
+;;; lorem-ipsum.el --- Insert dummy pseudo Latin text
 
 ;; Copyright (c) 2003 Jean-Philippe Theberge
 
 ;; Author: Jean-Philippe Theberge (jphil21@sourceforge.net)
 ;; Maintainer: Joe Schafer (joe@jschaf.com)
-;; Package-Version: 0.2
+;; Version: 0.2
 ;; Keywords: tools, language, convenience
+;; URL: https://github.com/jschaf/emacs-lorem-ipsum
 
 ;; Special Thanks: The emacswiki users, the #emacs@freenode.net citizens
 ;;                 and Marcus Tullius Cicero
@@ -26,13 +27,7 @@
 ;; General Public License for more details.
 
 ;; You should have received a copy of the GNU General Public License
-;; along with lorem-ipsum.el.  If not, see <http://www.gnu.org/licenses/>.
-
-;;; History:
-
-;; Version 0.1 released by Jean-Philippe Theberge in 2003.  After
-;; attempting to contact Jean-Philippe, Joe Schafer took over as
-;; maintainer and published to Github.
+;; along with lorem-ipsum.el.  If not, see <https://www.gnu.org/licenses/>.
 
 ;;; Commentary:
 
@@ -40,7 +35,7 @@
 ;; text into a buffer.
 ;;
 ;; To install manually, add this file to your `load-path'.  Use the
-;; default keybindings by adding the following to your .emacs file:
+;; default keybindings by adding the following to your init file:
 ;;
 ;; (lorem-ipsum-use-default-bindings)
 ;;
@@ -50,13 +45,18 @@
 ;; C-c l s: lorem-ipsum-insert-sentences
 ;; C-c l l: lorem-ipsum-insert-list
 ;;
-;; If you want a different keybinding, say you want the prefix C-c C-l, use a variation of the
-;; following:
+;; If you want a different keybinding, say you want the prefix C-c C-l, use a
+;; variation of the following:
 ;;
 ;; (global-set-key (kbd "C-c C-l s") 'lorem-ipsum-insert-sentences)
 ;; (global-set-key (kbd "C-c C-l p") 'lorem-ipsum-insert-paragraphs)
 ;; (global-set-key (kbd "C-c C-l l") 'lorem-ipsum-insert-list)
 
+;;; History:
+
+;; Version 0.1 released by Jean-Philippe Theberge in 2003.  After
+;; attempting to contact Jean-Philippe, Joe Schafer took over as
+;; maintainer and published to Github.
 
 ;;; Code:
 
@@ -69,7 +69,7 @@
 
 ;;;###autoload
 (defun lorem-ipsum-use-default-bindings ()
-  "Use the default keybindings of C-c l [spl]."
+  "Use the default keybindings of `C-c l [spl]'."
   (interactive)
   (global-set-key (kbd "C-c l s") 'lorem-ipsum-insert-sentences)
   (global-set-key (kbd "C-c l p") 'lorem-ipsum-insert-paragraphs)
@@ -150,13 +150,16 @@
 (make-variable-buffer-local 'lorem-ipsum-list-item-end)
 (make-variable-buffer-local 'lorem-ipsum-list-end)
 
-(add-hook 'sgml-mode-hook (lambda ()
-			    (setq lorem-ipsum-paragraph-separator "<br><br>\n"
-				  lorem-ipsum-sentence-separator "&nbsp;&nbsp;"
-				  lorem-ipsum-list-beginning "<ul>\n"
-				  lorem-ipsum-list-bullet "<li>"
-				  lorem-ipsum-list-item-end "</li>\n"
-				  lorem-ipsum-list-end "</ul>\n")))
+(defun lorem-ipsum-sgml-mode-hook ()
+  "Set some variables for lorem-ipsum in `sgml-mode'."
+  (setq lorem-ipsum-paragraph-separator "<br><br>\n"
+	lorem-ipsum-sentence-separator "&nbsp;&nbsp;"
+	lorem-ipsum-list-beginning "<ul>\n"
+	lorem-ipsum-list-bullet "<li>"
+	lorem-ipsum-list-item-end "</li>\n"
+	lorem-ipsum-list-end "</ul>\n"))
+
+(add-hook 'sgml-mode-hook #'lorem-ipsum-sgml-mode-hook)
 
 ;;;###autoload
 (defun lorem-ipsum-insert-paragraphs (&optional num)
