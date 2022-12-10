@@ -166,14 +166,15 @@
   "Insert lorem ipsum paragraphs into buffer.
 If NUM is non-nil, insert NUM paragraphs."
   (interactive "p")
-  (if (not num)(setq num 1))
-  (if (> num 0)
-      (progn
-	(insert (concat
-		 (mapconcat 'identity
-			    (nth (random (length lorem-ipsum-text))
-				 lorem-ipsum-text) lorem-ipsum-sentence-separator) lorem-ipsum-paragraph-separator))
-	(lorem-ipsum-insert-paragraphs (- num 1)))))
+  (if (not num) (setq num 1))
+  (when (> num 0)
+    (insert (concat
+	     (mapconcat #'identity
+			(nth (random (length lorem-ipsum-text))
+			     lorem-ipsum-text)
+                        lorem-ipsum-sentence-separator)
+             lorem-ipsum-paragraph-separator))
+    (lorem-ipsum-insert-paragraphs (- num 1))))
 
 ;;;###autoload
 (defalias 'Lorem-ipsum-insert-paragraphs 'lorem-ipsum-insert-paragraphs)
@@ -183,13 +184,12 @@ If NUM is non-nil, insert NUM paragraphs."
   "Insert lorem ipsum sentences into buffer.
 If NUM is non-nil, insert NUM sentences."
   (interactive "p")
-  (if (not num)(setq num 1))
-  (if (> num 0)
-      (progn
-	(let ((para
-	       (nth (random (length lorem-ipsum-text)) lorem-ipsum-text)))
-	  (insert (concat (nth (random (length para)) para) lorem-ipsum-sentence-separator)))
-	(lorem-ipsum-insert-sentences (- num 1)))))
+  (if (not num) (setq num 1))
+  (when (> num 0)
+    (let ((para
+ 	     (nth (random (length lorem-ipsum-text)) lorem-ipsum-text)))
+	(insert (concat (nth (random (length para)) para) lorem-ipsum-sentence-separator)))
+      (lorem-ipsum-insert-sentences (- num 1))))
 
 ;;;###autoload
 (defalias 'Lorem-ipsum-insert-sentences 'lorem-ipsum-insert-sentences)
@@ -199,7 +199,7 @@ If NUM is non-nil, insert NUM sentences."
   "Insert lorem ipsum list items into buffer.
 If NUM is non-nil, insert NUM list items."
   (interactive "p")
-  (if (not num)(setq num 1))
+  (if (not num) (setq num 1))
   (when (> num 0)
     (insert lorem-ipsum-list-beginning)
     (dotimes (_ num)
