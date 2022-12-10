@@ -4,7 +4,7 @@
 
 ;; Author: Jean-Philippe Theberge (jphil21@sourceforge.net)
 ;; Maintainer: Joe Schafer (joe@jschaf.com)
-;; Version: 0.2
+;; Version: 0.3
 ;; Keywords: tools, language, convenience
 ;; URL: https://github.com/jschaf/emacs-lorem-ipsum
 
@@ -60,7 +60,7 @@
 
 ;;; Code:
 
-(defconst lorem-ipsum-version "0.2")
+(defconst lorem-ipsum-version "0.3")
 
 (defgroup lorem-ipsum nil
   "Insert filler text."
