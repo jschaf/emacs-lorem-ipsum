@@ -1,4 +1,4 @@
-;;; lorem-ipsum.el --- Insert dummy pseudo Latin text
+;;; lorem-ipsum.el --- Insert dummy pseudo Latin text  -*- lexical-binding: t -*-
 
 ;; Copyright (c) 2003 Jean-Philippe Theberge
 
@@ -202,7 +202,7 @@ If NUM is non-nil, insert NUM list items."
   (if (not num)(setq num 1))
   (when (> num 0)
     (insert lorem-ipsum-list-beginning)
-    (dotimes (i num)
+    (dotimes (_ num)
       (let ((para (nth (random (length lorem-ipsum-text)) lorem-ipsum-text)))
         (insert (concat lorem-ipsum-list-bullet
                         (nth (random (length para)) para)
