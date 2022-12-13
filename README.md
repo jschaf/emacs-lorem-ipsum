@@ -1,6 +1,6 @@
 # Lorem Ipsum for Emacs #
 
-Add filler lorem ipsum text to Emacs
+Add filler lorem ipsum text in Emacs.
 
 ## Installation
 
@@ -32,12 +32,12 @@ This will setup the following keybindings:
 
 Key Binding | Function
 ------------|------------------------------
-`C-c l p`   | lorem-ipsum-insert-paragraphs
-`C-c l s`   | lorem-ipsum-insert-sentences
-`C-c l l`   | lorem-ipsum-insert-list
+`C-c l p`   | `lorem-ipsum-insert-paragraphs`
+`C-c l s`   | `lorem-ipsum-insert-sentences`
+`C-c l l`   | `lorem-ipsum-insert-list`
 
-If you want different keybinding, say you want the prefix C-c C-l, use a variation of the
-following:
+If you want different keybinding, say you want the prefix `C-c C-l`,
+use a variation of the following:
 
     (global-set-key (kbd "C-c C-l s") 'lorem-ipsum-insert-sentences)
     (global-set-key (kbd "C-c C-l p") 'lorem-ipsum-insert-paragraphs)
