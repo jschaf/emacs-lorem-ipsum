@@ -1,24 +1,26 @@
+[![NonGNU ELPA](https://elpa.nongnu.org/nongnu/lorem-ipsum.svg)](https://elpa.nongnu.org/nongnu/lorem-ipsum.html)
+
 # Lorem Ipsum for Emacs #
 
 Add filler lorem ipsum text in Emacs.
 
 ## Installation
 
-**MELPA**
+**NonGNU ELPA or MELPA**
 
-This package is available via MELPA. You can install it by calling:
+This package is available via [NonGNU ELPA](https://elpa.nongnu.org/)
+and MELPA.  You can install it by calling:
 
-    M-x package-install RET lorem-ipsum
+    M-x package-install RET lorem-ipsum RET
 
-Finally, the package must be required:
-
-    (require 'lorem-ipsum)
+That's it, all the functions you need are `autoload`ed.
 
 **Manual Installation**
 
-Add `lorem-ipsum.el` to your `load-path`.  That's it, all the
-functions you need are `autoload`ed.
+Add `lorem-ipsum.el` to your `load-path`.  Finally, the package must
+be required:
 
+    (require 'lorem-ipsum)
 
 ## Setup
 
