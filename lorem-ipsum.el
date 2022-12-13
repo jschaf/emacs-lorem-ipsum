@@ -39,7 +39,7 @@
 ;;
 ;; (lorem-ipsum-use-default-bindings)
 ;;
-;; This will setup the folling keybindings:
+;; This will setup the following keybindings:
 ;;
 ;; C-c l p: lorem-ipsum-insert-paragraphs
 ;; C-c l s: lorem-ipsum-insert-sentences

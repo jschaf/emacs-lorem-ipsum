@@ -28,7 +28,7 @@ file:
     (lorem-ipsum-use-default-bindings)
 
 
-This will setup the folling keybindings:
+This will setup the following keybindings:
 
 Key Binding | Function
 ------------|------------------------------
