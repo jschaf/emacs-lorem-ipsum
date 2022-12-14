@@ -70,7 +70,6 @@
 ;;;###autoload
 (defun lorem-ipsum-use-default-bindings ()
   "Use the default keybindings of `C-c l [spl]'."
-  (interactive)
   (global-set-key (kbd "C-c l s") 'lorem-ipsum-insert-sentences)
   (global-set-key (kbd "C-c l p") 'lorem-ipsum-insert-paragraphs)
   (global-set-key (kbd "C-c l l") 'lorem-ipsum-insert-list))
