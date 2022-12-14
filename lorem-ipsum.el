@@ -4,7 +4,7 @@
 
 ;; Author: Jean-Philippe Theberge (jphil21@sourceforge.net)
 ;; Maintainer: Joe Schafer (joe@jschaf.com)
-;; Version: 0.3
+;; Version: 0.4
 ;; Keywords: tools, language, convenience
 ;; URL: https://github.com/jschaf/emacs-lorem-ipsum
 
