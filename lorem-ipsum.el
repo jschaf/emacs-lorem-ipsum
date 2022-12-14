@@ -177,9 +177,6 @@ If NUM is non-nil, insert NUM paragraphs."
     (lorem-ipsum-insert-paragraphs (- num 1))))
 
 ;;;###autoload
-(defalias 'Lorem-ipsum-insert-paragraphs 'lorem-ipsum-insert-paragraphs)
-
-;;;###autoload
 (defun lorem-ipsum-insert-sentences (&optional num)
   "Insert lorem ipsum sentences into buffer.
 If NUM is non-nil, insert NUM sentences."
@@ -190,9 +187,6 @@ If NUM is non-nil, insert NUM sentences."
  	     (nth (random (length lorem-ipsum-text)) lorem-ipsum-text)))
 	(insert (concat (nth (random (length para)) para) lorem-ipsum-sentence-separator)))
       (lorem-ipsum-insert-sentences (- num 1))))
-
-;;;###autoload
-(defalias 'Lorem-ipsum-insert-sentences 'lorem-ipsum-insert-sentences)
 
 ;;;###autoload
 (defun lorem-ipsum-insert-list (&optional num)
@@ -210,7 +204,14 @@ If NUM is non-nil, insert NUM list items."
     (insert lorem-ipsum-list-end)))
 
 ;;;###autoload
-(defalias 'Lorem-ipsum-insert-list 'lorem-ipsum-insert-list)
+(define-obsolete-function-alias 'Lorem-ipsum-insert-paragraphs
+  'lorem-ipsum-insert-paragraphs "29.1")
+;;;###autoload
+(define-obsolete-function-alias 'Lorem-ipsum-insert-sentences
+  'lorem-ipsum-insert-sentences "29.1")
+;;;###autoload
+(define-obsolete-function-alias 'Lorem-ipsum-insert-list
+  'lorem-ipsum-insert-list "29.1")
 
 (provide 'lorem-ipsum)
 
