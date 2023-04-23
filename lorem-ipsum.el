@@ -60,7 +60,7 @@
 
 ;;; Code:
 
-(defconst lorem-ipsum-version "0.3")
+(defconst lorem-ipsum-version "0.4")
 
 (defgroup lorem-ipsum nil
   "Insert filler text."
