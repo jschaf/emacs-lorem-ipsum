@@ -60,7 +60,7 @@
 
 ;;; Code:
 
-(defconst lorem-ipsum-version "0.3")
+(defconst lorem-ipsum-version "0.4")
 
 (defgroup lorem-ipsum nil
   "Insert filler text."
@@ -136,7 +136,9 @@
      "Nam a sapien.")))
 
 (defvar lorem-ipsum-paragraph-separator "\n\n")
-(defvar lorem-ipsum-sentence-separator "  ")
+(defvar lorem-ipsum-sentence-separator (if sentence-end-double-space
+                                           "  "
+                                         " "))
 (defvar lorem-ipsum-list-beginning "")
 (defvar lorem-ipsum-list-bullet "* ")
 (defvar lorem-ipsum-list-item-end "\n")
@@ -152,7 +154,7 @@
 (defun lorem-ipsum-sgml-mode-hook ()
   "Set some variables for lorem-ipsum in `sgml-mode'."
   (setq lorem-ipsum-paragraph-separator "<br><br>\n"
-	lorem-ipsum-sentence-separator "&nbsp;&nbsp;"
+	lorem-ipsum-sentence-separator (replace-regexp-in-string " " "&nbsp;" lorem-ipsum-sentence-separator)
 	lorem-ipsum-list-beginning "<ul>\n"
 	lorem-ipsum-list-bullet "<li>"
 	lorem-ipsum-list-item-end "</li>\n"
